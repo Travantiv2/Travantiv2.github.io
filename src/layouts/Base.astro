@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+const { title = 'Travantiv2 • Portfolio', description = 'Projects, skills, and contact' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>{title}</title>
+    <style is:global>
+      :root { --bg: #0b1020; --grad-1: #141b2d; --grad-2: #0b1020; }
+      .noise { background-image: radial-gradient(60% 80% at 50% 10%, rgba(99,102,241,.18), transparent 60%), radial-gradient(40% 50% at 10% 60%, rgba(236,72,153,.15), transparent 60%), radial-gradient(40% 40% at 90% 70%, rgba(59,130,246,.12), transparent 60%); }
+    </style>
+  </head>
+  <body class="min-h-full bg-[var(--bg)] text-zinc-100 antialiased selection:bg-brand-600/30">
+    <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur supports-[backdrop-filter]:bg-white/5">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <a href="#" class="text-lg font-semibold tracking-tight"><span class="text-brand-400">T</span>ravantiv2</a>
+        <ul class="hidden gap-6 text-sm md:flex">
+          <li><a href="#projects" class="hover:text-brand-300">Projects</a></li>
+          <li><a href="#about" class="hover:text-brand-300">About</a></li>
+          <li><a href="#contact" class="hover:text-brand-300">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-primary text-sm">Get in touch</a>
+      </nav>
+    </header>
+
+    <main class="relative">
+      <div class="absolute inset-0 -z-10 noise"></div>
+      <slot />
+    </main>
+
+    <footer class="mt-20 border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-400">
+        <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p>&copy; {new Date().getFullYear()} Travantiv2. All rights reserved.</p>
+          <div class="flex items-center gap-4">
+            <a class="hover:text-zinc-200" href="https://github.com/Travantiv2" target="_blank" rel="noopener">GitHub</a>
+            <a class="hover:text-zinc-200" href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

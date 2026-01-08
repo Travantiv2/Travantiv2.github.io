@@ -1,0 +1,71 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import projects from "../data/projects.js";
+---
+<Base title="Travantiv2 • Portfolio" description="Showcasing projects, skills, and ways to connect.">
+  <section class="relative isolate mx-auto max-w-6xl px-6 py-20">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1 class="text-balance text-4xl font-extrabold tracking-tight sm:text-6xl">
+        Building things that are fast, clean, and fun.
+      </h1>
+      <p class="mt-6 text-pretty text-lg leading-8 text-zinc-300">
+        Hey, I’m Travanti — a student and aspiring robotics engineer. I enjoy building games,
+        tooling, and web experiences while learning new tech.
+      </p>
+      <div class="mt-8 flex items-center justify-center gap-3">
+        <a class="btn-primary" href="#projects">See projects</a>
+        <a class="inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-zinc-200 hover:border-brand-400 hover:text-white" href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="mx-auto max-w-6xl px-6 py-12">
+    <div class="mb-8 flex items-end justify-between">
+      <h2 class="text-2xl font-semibold tracking-tight">Featured Projects</h2>
+      <a href="https://github.com/Travantiv2" target="_blank" rel="noopener" class="text-sm text-zinc-300 hover:text-white">View all on GitHub →</a>
+    </div>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {projects.map((p) => <ProjectCard {...p} />)}
+    </div>
+  </section>
+
+  <section id="about" class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight">About</h2>
+        <p class="mt-4 text-zinc-300">
+          I’m a college student exploring software and robotics. I like solving problems and shipping
+          small projects that teach me something new. This site is built with Astro + Tailwind and
+          deployed with GitHub Pages.
+        </p>
+        <ul class="mt-4 flex flex-wrap gap-2 text-sm text-zinc-300">
+          <li class="rounded-md border border-white/10 px-2 py-1">Python</li>
+          <li class="rounded-md border border-white/10 px-2 py-1">JavaScript</li>
+          <li class="rounded-md border border-white/10 px-2 py-1">Web</li>
+          <li class="rounded-md border border-white/10 px-2 py-1">Robotics</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="text-lg font-semibold">This site</h3>
+        <ul class="mt-3 list-disc pl-5 text-sm text-zinc-300">
+          <li>Modern stack: Astro + Tailwind</li>
+          <li>Fast, accessible, and responsive</li>
+          <li>Easy to edit: update src/data/projects.js</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="mx-auto max-w-6xl px-6 py-16">
+    <div class="card flex flex-col items-center text-center">
+      <h2 class="text-2xl font-semibold tracking-tight">Let’s build something</h2>
+      <p class="mt-3 max-w-2xl text-zinc-300">Reach out if you’d like to collaborate or have a question about a project.</p>
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <a class="btn-primary" href="mailto:travantiv2@example.com">Email me</a>
+        <a class="inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-zinc-200 hover:border-brand-400 hover:text-white" href="https://github.com/Travantiv2" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</Base>
+

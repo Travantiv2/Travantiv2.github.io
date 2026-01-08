@@ -13,10 +13,18 @@ html {
 /* Component layer customizations */
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-white shadow-md shadow-brand-600/30 transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-400;
+    @apply inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-storm-600 to-thunder-600 px-4 py-2 text-white shadow-lg shadow-storm-600/30 transition-all duration-300 hover:from-storm-700 hover:to-thunder-700 hover:shadow-xl hover:shadow-storm-600/40 focus:outline-none focus:ring-2 focus:ring-lightning-400;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-storm-400/30 bg-storm-900/20 px-4 py-2 text-storm-200 backdrop-blur transition-all duration-300 hover:border-lightning-400/50 hover:bg-storm-800/30 hover:text-white focus:outline-none focus:ring-2 focus:ring-lightning-400;
   }
   .card {
-    @apply rounded-xl border border-zinc-200/60 bg-white/80 p-5 shadow-sm backdrop-blur dark:border-zinc-800/60 dark:bg-zinc-900/70;
+    @apply rounded-xl border border-storm-800/40 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-6 shadow-xl shadow-storm-900/20 backdrop-blur-sm transition-all duration-300 hover:border-storm-600/50 hover:shadow-2xl hover:shadow-storm-800/30;
+  }
+  .lightning-glow {
+    @apply animate-pulse bg-gradient-to-r from-lightning-400 via-lightning-300 to-lightning-400 bg-clip-text text-transparent;
+  }
+  .storm-text {
+    @apply bg-gradient-to-r from-storm-300 via-storm-200 to-storm-300 bg-clip-text text-transparent;
   }
 }
-

@@ -18,35 +18,76 @@ const { title = 'Travantiv2 • Portfolio', description = 'Projects, skills, and
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>{title}</title>
     <style is:global>
-      :root { --bg: #0b1020; --grad-1: #141b2d; --grad-2: #0b1020; }
-      .noise { background-image: radial-gradient(60% 80% at 50% 10%, rgba(99,102,241,.18), transparent 60%), radial-gradient(40% 50% at 10% 60%, rgba(236,72,153,.15), transparent 60%), radial-gradient(40% 40% at 90% 70%, rgba(59,130,246,.12), transparent 60%); }
+      :root { 
+        --bg: #0f0f23; 
+        --storm-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #0f0f23 100%);
+      }
+      .storm-bg { 
+        background: var(--storm-bg);
+        background-image: 
+          radial-gradient(circle at 20% 80%, rgba(124,106,255,0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(237,116,32,0.12) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(245,158,11,0.08) 0%, transparent 50%),
+          linear-gradient(180deg, transparent 0%, rgba(124,106,255,0.03) 100%);
+      }
+      .lightning-flash {
+        animation: lightning 4s infinite;
+      }
+      @keyframes lightning {
+        0%, 90%, 100% { opacity: 0; }
+        91%, 92%, 93% { opacity: 0.8; }
+        94%, 95% { opacity: 0; }
+        96%, 97% { opacity: 1; }
+      }
+      .thunder-rumble {
+        animation: rumble 6s infinite ease-in-out;
+      }
+      @keyframes rumble {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-1px); }
+        50% { transform: translateX(1px); }
+        75% { transform: translateX(-0.5px); }
+      }
     </style>
   </head>
-  <body class="min-h-full bg-[var(--bg)] text-zinc-100 antialiased selection:bg-brand-600/30">
-    <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur supports-[backdrop-filter]:bg-white/5">
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <a href="#" class="text-lg font-semibold tracking-tight"><span class="text-brand-400">T</span>ravantiv2</a>
-        <ul class="hidden gap-6 text-sm md:flex">
-          <li><a href="#projects" class="hover:text-brand-300">Projects</a></li>
-          <li><a href="#about" class="hover:text-brand-300">About</a></li>
-          <li><a href="#contact" class="hover:text-brand-300">Contact</a></li>
+  <body class="min-h-full storm-bg text-zinc-100 antialiased selection:bg-storm-600/30">
+    <!-- Lightning flash overlay -->
+    <div class="lightning-flash fixed inset-0 z-50 pointer-events-none bg-gradient-to-br from-lightning-400/20 via-transparent to-lightning-300/10"></div>
+    
+    <header class="sticky top-0 z-40 border-b border-storm-700/30 backdrop-blur-md supports-[backdrop-filter]:bg-slate-900/20">
+      <nav class="thunder-rumble mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#" class="text-xl font-bold tracking-tight">
+          <span class="lightning-glow">⚡</span>
+          <span class="storm-text">Travantiv2</span>
+        </a>
+        <ul class="hidden gap-8 text-sm font-medium md:flex">
+          <li><a href="#projects" class="transition-colors hover:text-lightning-300">Projects</a></li>
+          <li><a href="#about" class="transition-colors hover:text-lightning-300">About</a></li>
+          <li><a href="#contact" class="transition-colors hover:text-lightning-300">Contact</a></li>
         </ul>
-        <a href="#contact" class="btn-primary text-sm">Get in touch</a>
+        <a href="#contact" class="btn-primary text-sm font-semibold">
+          <span>⚡</span>
+          Get in touch
+        </a>
       </nav>
     </header>
 
     <main class="relative">
-      <div class="absolute inset-0 -z-10 noise"></div>
       <slot />
     </main>
 
-    <footer class="mt-20 border-t border-white/10">
-      <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-400">
-        <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} Travantiv2. All rights reserved.</p>
-          <div class="flex items-center gap-4">
-            <a class="hover:text-zinc-200" href="https://github.com/Travantiv2" target="_blank" rel="noopener">GitHub</a>
-            <a class="hover:text-zinc-200" href="#contact">Contact</a>
+    <footer class="mt-20 border-t border-storm-700/30">
+      <div class="mx-auto max-w-6xl px-6 py-12 text-sm text-storm-300">
+        <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <p class="flex items-center gap-2">
+            <span class="lightning-glow text-lg">⚡</span>
+            &copy; {new Date().getFullYear()} Travantiv2. Powered by storms.
+          </p>
+          <div class="flex items-center gap-6">
+            <a class="transition-colors hover:text-lightning-300" href="https://github.com/Travantiv2" target="_blank" rel="noopener">
+              GitHub
+            </a>
+            <a class="transition-colors hover:text-lightning-300" href="#contact">Contact</a>
           </div>
         </div>
       </div>

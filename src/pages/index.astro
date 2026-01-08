@@ -3,67 +3,161 @@ import Base from "../layouts/Base.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import projects from "../data/projects.js";
 ---
-<Base title="Travantiv2 • Portfolio" description="Showcasing projects, skills, and ways to connect.">
-  <section class="relative isolate mx-auto max-w-6xl px-6 py-20">
-    <div class="mx-auto max-w-3xl text-center">
-      <h1 class="text-balance text-4xl font-extrabold tracking-tight sm:text-6xl">
-        Building things that are fast, clean, and fun.
+<Base title="Travantiv2 • Storm-Powered Portfolio" description="Electrifying projects, skills, and ways to connect.">
+  <section class="relative isolate mx-auto max-w-6xl px-6 py-24">
+    <!-- Animated storm clouds -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-storm-600/10 blur-3xl animate-pulse"></div>
+      <div class="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-thunder-600/10 blur-2xl animate-pulse delay-1000"></div>
+      <div class="absolute top-1/2 left-1/4 h-40 w-40 rounded-full bg-lightning-500/5 blur-xl animate-pulse delay-2000"></div>
+    </div>
+    
+    <div class="relative mx-auto max-w-4xl text-center">
+      <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-storm-600/30 bg-storm-900/20 px-6 py-3 backdrop-blur">
+        <span class="lightning-glow text-2xl">⚡</span>
+        <span class="text-sm font-medium text-storm-200">Powered by Thunder & Code</span>
+      </div>
+      
+      <h1 class="text-balance text-5xl font-black tracking-tight sm:text-7xl">
+        <span class="storm-text">Building</span> things that are 
+        <span class="lightning-glow">electrifying</span>, 
+        <span class="storm-text">fast</span>, and 
+        <span class="lightning-glow">powerful</span>.
       </h1>
-      <p class="mt-6 text-pretty text-lg leading-8 text-zinc-300">
-        Hey, I’m Travanti — a student and aspiring robotics engineer. I enjoy building games,
-        tooling, and web experiences while learning new tech.
+      
+      <p class="mt-8 text-pretty text-xl leading-9 text-storm-200">
+        Hey, I'm <span class="font-semibold text-lightning-300">Travanti</span> — a student and aspiring robotics engineer. 
+        I harness the power of storms to build games, tooling, and web experiences that strike like lightning.
       </p>
-      <div class="mt-8 flex items-center justify-center gap-3">
-        <a class="btn-primary" href="#projects">See projects</a>
-        <a class="inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-zinc-200 hover:border-brand-400 hover:text-white" href="#contact">Contact</a>
+      
+      <div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a class="btn-primary text-base" href="#projects">
+          <span>⚡</span>
+          See my work
+        </a>
+        <a class="btn-secondary text-base" href="#contact">
+          <span>🌩️</span>
+          Let's connect
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="mx-auto max-w-6xl px-6 py-12">
-    <div class="mb-8 flex items-end justify-between">
-      <h2 class="text-2xl font-semibold tracking-tight">Featured Projects</h2>
-      <a href="https://github.com/Travantiv2" target="_blank" rel="noopener" class="text-sm text-zinc-300 hover:text-white">View all on GitHub →</a>
+  <section id="projects" class="mx-auto max-w-6xl px-6 py-16">
+    <div class="mb-12 text-center">
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-thunder-600/30 bg-thunder-900/20 px-4 py-2 backdrop-blur">
+        <span class="text-thunder-400">🔥</span>
+        <span class="text-sm font-medium text-thunder-200">Featured Work</span>
+      </div>
+      <h2 class="text-4xl font-bold tracking-tight">
+        <span class="storm-text">Projects</span> <span class="lightning-glow">Forged</span> <span class="storm-text">in Storms</span>
+      </h2>
+      <p class="mt-4 text-lg text-storm-300">Each project is a lightning strike of innovation and creativity.</p>
     </div>
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
       {projects.map((p) => <ProjectCard {...p} />)}
     </div>
+    
+    <div class="mt-12 text-center">
+      <a href="https://github.com/Travantiv2" target="_blank" rel="noopener" class="btn-secondary">
+        <span>⚡</span>
+        View all on GitHub
+      </a>
+    </div>
   </section>
 
-  <section id="about" class="mx-auto max-w-6xl px-6 py-16">
-    <div class="grid items-center gap-10 md:grid-cols-2">
-      <div>
-        <h2 class="text-2xl font-semibold tracking-tight">About</h2>
-        <p class="mt-4 text-zinc-300">
-          I’m a college student exploring software and robotics. I like solving problems and shipping
-          small projects that teach me something new. This site is built with Astro + Tailwind and
-          deployed with GitHub Pages.
+  <section id="about" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 rounded-full border border-storm-600/30 bg-storm-900/20 px-4 py-2 backdrop-blur">
+          <span class="lightning-glow">⚡</span>
+          <span class="text-sm font-medium text-storm-200">About Me</span>
+        </div>
+        
+        <h2 class="text-4xl font-bold tracking-tight">
+          <span class="storm-text">Channeling</span> <span class="lightning-glow">Electric</span> <span class="storm-text">Energy</span>
+        </h2>
+        
+        <p class="text-lg text-storm-200 leading-relaxed">
+          I'm a college student exploring the intersection of software and robotics. Like a storm gathering energy, 
+          I'm constantly learning and building projects that push boundaries. Each line of code is a lightning bolt 
+          of possibility, each robot a thunder of innovation.
         </p>
-        <ul class="mt-4 flex flex-wrap gap-2 text-sm text-zinc-300">
-          <li class="rounded-md border border-white/10 px-2 py-1">Python</li>
-          <li class="rounded-md border border-white/10 px-2 py-1">JavaScript</li>
-          <li class="rounded-md border border-white/10 px-2 py-1">Web</li>
-          <li class="rounded-md border border-white/10 px-2 py-1">Robotics</li>
-        </ul>
+        
+        <p class="text-storm-300">
+          This storm-powered site is built with Astro + Tailwind and deployed with the fury of GitHub Pages.
+        </p>
+        
+        <div class="flex flex-wrap gap-3">
+          <span class="rounded-lg border border-storm-700/50 bg-storm-800/30 px-3 py-2 text-sm font-medium text-storm-200">⚡ Python</span>
+          <span class="rounded-lg border border-thunder-700/50 bg-thunder-800/30 px-3 py-2 text-sm font-medium text-thunder-200">🔥 JavaScript</span>
+          <span class="rounded-lg border border-lightning-700/50 bg-lightning-800/30 px-3 py-2 text-sm font-medium text-lightning-200">⚡ Web Dev</span>
+          <span class="rounded-lg border border-storm-700/50 bg-storm-800/30 px-3 py-2 text-sm font-medium text-storm-200">🤖 Robotics</span>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="text-lg font-semibold">This site</h3>
-        <ul class="mt-3 list-disc pl-5 text-sm text-zinc-300">
-          <li>Modern stack: Astro + Tailwind</li>
-          <li>Fast, accessible, and responsive</li>
-          <li>Easy to edit: update src/data/projects.js</li>
+      
+      <div class="card space-y-4">
+        <div class="flex items-center gap-3">
+          <span class="lightning-glow text-2xl">⚡</span>
+          <h3 class="text-xl font-bold text-lightning-300">Storm Architecture</h3>
+        </div>
+        
+        <ul class="space-y-3 text-storm-200">
+          <li class="flex items-center gap-3">
+            <span class="text-storm-400">🌩️</span>
+            <span>Modern stack: Astro + Tailwind CSS</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-thunder-400">⚡</span>
+            <span>Lightning-fast performance & accessibility</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-lightning-400">🔥</span>
+            <span>Reactive animations & storm effects</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-storm-400">🌪️</span>
+            <span>Easy to customize: edit src/data/projects.js</span>
+          </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="mx-auto max-w-6xl px-6 py-16">
-    <div class="card flex flex-col items-center text-center">
-      <h2 class="text-2xl font-semibold tracking-tight">Let’s build something</h2>
-      <p class="mt-3 max-w-2xl text-zinc-300">Reach out if you’d like to collaborate or have a question about a project.</p>
-      <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <a class="btn-primary" href="mailto:travantiv2@example.com">Email me</a>
-        <a class="inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-zinc-200 hover:border-brand-400 hover:text-white" href="https://github.com/Travantiv2" target="_blank" rel="noopener">GitHub</a>
+  <section id="contact" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="relative">
+      <!-- Storm effect background -->
+      <div class="absolute inset-0 overflow-hidden rounded-2xl">
+        <div class="absolute -top-20 -left-20 h-40 w-40 rounded-full bg-storm-600/20 blur-2xl animate-pulse"></div>
+        <div class="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-thunder-600/20 blur-2xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div class="card relative text-center">
+        <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-lightning-600/30 bg-lightning-900/20 px-6 py-3 backdrop-blur">
+          <span class="lightning-glow text-2xl">⚡</span>
+          <span class="text-sm font-medium text-lightning-200">Ready to Collaborate</span>
+        </div>
+        
+        <h2 class="text-4xl font-bold tracking-tight mb-4">
+          <span class="lightning-glow">Let's Create</span> <span class="storm-text">Something</span> <span class="lightning-glow">Electric</span>
+        </h2>
+        
+        <p class="text-lg text-storm-200 max-w-2xl mx-auto mb-8">
+          Ready to harness the storm? Whether you want to collaborate on a project, discuss robotics, 
+          or just chat about code, I'm always excited to connect with fellow innovators.
+        </p>
+        
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a class="btn-primary text-base" href="mailto:travantiv2@example.com">
+            <span>⚡</span>
+            Strike up a conversation
+          </a>
+          <a class="btn-secondary text-base" href="https://github.com/Travantiv2" target="_blank" rel="noopener">
+            <span>🌩️</span>
+            Follow the storm on GitHub
+          </a>
+        </div>
       </div>
     </div>
   </section>
